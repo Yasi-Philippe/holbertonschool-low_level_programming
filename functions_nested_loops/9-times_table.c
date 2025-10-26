@@ -23,12 +23,13 @@ void times_table(void)
 				_putchar('0' + (a * b) % 10);
 			}
 			if (b != 9)
+			{
 				_putchar(',');
-			if (b != 9)
 				_putchar(' ');
-			if (a == 0)
+			}
+			if (a == 0 && b != 9)
 				_putchar(' ');
-			if (b == 9 && a != 9)
+			if (b == 9)
 				_putchar('\n');
 		}
 	}
