@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	char *str = "and that piece of art is useful\" - Dora Korpar, 2015-10-19 \n";
+	char *str = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
 	size_t i = 0;
 
 	while (str[i] != '\0')
