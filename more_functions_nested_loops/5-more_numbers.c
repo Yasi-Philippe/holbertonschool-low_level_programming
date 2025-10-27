@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_most_numbers - Prints all the numbers except 2 and 4.
+ * pmore_numbers - Prints numbers from 0 to 14.
  *
  *
  * Return: Void.
