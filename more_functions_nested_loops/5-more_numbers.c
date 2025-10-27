@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * pmore_numbers - Prints numbers from 0 to 14.
+ * more_numbers - Prints numbers from 0 to 14.
  *
  *
  * Return: Void.
