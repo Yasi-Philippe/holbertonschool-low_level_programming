@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * print_traingle - Prints a traingle
+ * print_triangle - Prints a triangle
  * @size: Input integer.
  *
  * Return: Void.
