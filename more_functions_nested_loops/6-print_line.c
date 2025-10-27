@@ -2,7 +2,7 @@
 
 /**
  * print_line - Prints underscores
- *
+ * @n: Input integer.
  *
  * Return: Void.
  */
