@@ -16,9 +16,10 @@ void rev_string(char *s)
 		temp[a] = s[a];
 		a++;
 	}
-	l = a -1;
+
+	l = a - 1;
 	for (a = 0; a <= l; a++)
 	{
-		s[a] = temp[l-a];
+		s[a] = temp[l - a];
 	}
 }
