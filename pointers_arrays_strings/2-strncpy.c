@@ -25,5 +25,5 @@ char *_strncpy(char *dest, char *src, int n)
 		c++;
 	}
 	*dest = '\0';
-	return (dest - c - 1);
+	return (dest);
 }
