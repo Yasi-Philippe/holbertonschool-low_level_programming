@@ -22,5 +22,6 @@ void print_array(int *a, int n)
 				printf("%d\n", a[l]);
 	else
 	{
+		putchar('\n');
 	}
 }
