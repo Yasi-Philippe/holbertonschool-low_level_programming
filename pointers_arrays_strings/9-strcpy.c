@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _strcpy - Copies a string from a specified source to a specified destination.
+ * _strcpy - Copies a string from a specified source to a specified destination
  * @dest: Input int array.
  * @src: Inut int number of elements to display
  * Return: Void.
@@ -15,5 +15,6 @@ char *_strcpy(char *dest, char *src)
 		dest[l] = src[l];
 		l++;
 	}
+	dest[l + 1] = '\0';
 	return (dest);
 }
