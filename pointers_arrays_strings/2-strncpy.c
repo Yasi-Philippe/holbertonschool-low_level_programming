@@ -13,7 +13,7 @@ char *_strncpy(char *dest, char *src, int n)
 
 	if (n <= 0)
 		return (dest);
-	if (!*src)
+	if (*src == '\0')
 	{
 		*dest = '\0';
 		return (dest);
@@ -25,5 +25,5 @@ char *_strncpy(char *dest, char *src, int n)
 		c++;
 	}
 	*dest = '\0';
-	return (dest - c);
+	return (dest - c - 1);
 }
