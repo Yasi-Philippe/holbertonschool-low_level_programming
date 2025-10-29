@@ -12,7 +12,7 @@ void print_array(int *a, int n)
 	int l;
 
 	if (n <= 0)
-		printf(", ");
+		putchar('\0');
 	else
 		for (l = 0; l < n; l++)
 			if (l != n - 1)
