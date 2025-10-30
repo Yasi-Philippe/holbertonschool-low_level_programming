@@ -12,6 +12,8 @@ char *cap_string(char *str)
 	int c = 0;
 	int mark = 0;
 
+	if (*ptr >= 97 && *ptr <= 122)
+		*ptr -= 32;
 	while (*ptr)
 	{
 		for (c = 0; c <= 12; c++)
