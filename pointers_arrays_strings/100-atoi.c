@@ -14,17 +14,17 @@ int _atoi(char *s)
 	while (*s)
 	{
 		if ((*s < 48 || *s > 57) && mark)
-			return (i * sign);
+			return (i);
 		if (*s == '-')
 			sign = -sign;
 		else if (*s > 48 && *s <= 57)
 		{
-			i = (*s - 48) + (10 * i);
+			i = (*s - 48) * sign + (10 * i);
 			mark = 1;
 		}
 		else if (*s == 48)
 			i = 10 * i;
 		s++;
 	}
-	return (i * sign);
+	return (i);
 }
