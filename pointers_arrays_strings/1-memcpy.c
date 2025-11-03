@@ -1,17 +1,17 @@
 #include "main.h"
 
 /**
- * _memset - Fills memory with a constant.
- * @s: Input string.
- * @b: Input constant.
+ * _memset - Copies a string into another.
+ * @dest: Input destination string.
+ * @src: Input source string.
  * @n: Input integer.
  * Return: Pointer to the string filled with a constant.
  */
-char *_memset(char *s, char b, unsigned int n)
+char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int c;
 
 	for (c = 0; c < n; c++)
-		s[c] = b;
-	return (s);
+		dest[c] = src[c];
+	return (dest);
 }
