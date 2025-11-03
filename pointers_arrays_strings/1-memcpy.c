@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _memset - Copies a string into another.
+ * _memcpy - Copies a string into another.
  * @dest: Input destination string.
  * @src: Input source string.
  * @n: Input integer.
