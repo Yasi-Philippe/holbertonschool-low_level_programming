@@ -5,13 +5,15 @@
  * _strdup - Copies a string into the dynamic memory.
  * @str: Input string.
  *
- * Return: Pointer to the string in the HEAP.
+ * Return: Pointer to the string in the HEAP. 0 if NULL.
  */
 char *_strdup(char *str)
 {
 	char *s;
 	int c = 0;
 
+	if (!*str)
+		return (0);
 	while (str[c])
 		c++;
 	s = malloc((c + 1) * sizeof(char));
