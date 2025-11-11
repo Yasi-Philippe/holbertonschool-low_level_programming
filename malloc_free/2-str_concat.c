@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 	if (s == NULL)
 		return (0);
 	if (!s1 && !s2)
-		return(s);
+		return (s);
 	c1--;
 	if (s2)
 		for (; c2 >= 0; c2--)
