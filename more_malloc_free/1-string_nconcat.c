@@ -10,39 +10,29 @@
  *
  * Return: - Pointer to allocated memory. Null if unseccessful.
  */
-char *string_nconcat(char *s1, char *s2, int n)
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *ptr;
-	int c1 = 0;
-	int c2 = 0;
+	unsigned int c1 = 0, c2 = 0, i;
 
-	if (s1)
-		while (s1[c1])
-			c1++;
-	if (s2 && n)
+	while (s1 && s1[c1])
+		c1++;
+	while (s2 && s2[c2])
 	{
-		while (s2[c2] && c2 < n - 1)
-			c2++;
-		if (!s2[c2])
-			c2--;
+		c2++;
+		if (n == c2 - 1)
+		{
+			c2 = n;
+			break;
+		}
 	}
-	if ((!s2 || !n) && !s1)
-		c2--;
-	ptr = malloc((c1 + c2 + 2) * sizeof(char));
+	ptr = malloc(c1 + c2 + 1 * sizeof(char));
 	if (ptr == NULL)
 		return (0);
-	if (!s1 && (!s2 || n == 0))
-		return (ptr);
-	c1--;
-	if (s2 && n)
-	{
-		ptr[c1 + c2 + 2] = '\0';
-		for (; c2 >= 0; c2--)
-			ptr[c1 + c2 + 1] = s2[c2];
-	}
-	else
-		c1++;
-	for (; c1 >= 0; c1--)
-		ptr[c1] = s1[c1];
+	for (i = 0; i < c1; i++)
+		ptr[i] = s1[i];
+	for (i = 0; i < c2; i++)
+		ptr[i + c1] = s2[i];
+	ptr[c1 + c2] = '\0';
 	return (ptr);
 }
