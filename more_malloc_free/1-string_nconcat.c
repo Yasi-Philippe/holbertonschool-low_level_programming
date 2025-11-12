@@ -26,10 +26,12 @@ char *string_nconcat(char *s1, char *s2, int n)
 		if (!s2[c2])
 			c2--;
 	}
+	if ((!s2 || !n) && !s1)
+		c2--;
 	ptr = malloc((c1 + c2 + 2) * sizeof(char));
 	if (ptr == NULL)
 		return (0);
-	if (!s1 && !s2)
+	if (!s1 && (!s2 || n == 0))
 		return (ptr);
 	c1--;
 	if (s2 && n)
