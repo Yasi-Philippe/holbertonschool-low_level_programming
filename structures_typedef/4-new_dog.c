@@ -23,7 +23,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		l1++;
 	while (name[l2])
 		l2++;
-	ptr = malloc(sizeof(char) * (l1 + l2));
+	ptr = malloc(sizeof(char) * (l1 + l2 + 2));
 	if (!ptr)
 		return (0);
 	for (c = 0; name[c]; c++)
