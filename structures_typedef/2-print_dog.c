@@ -13,9 +13,6 @@ void print_dog(struct dog *d)
 	if (!d)
 		return;
 	printf("Name: %s\n", (*d).name ? (*d).name : a);
-	if ((*d).age)
-		printf("Age: %f\n", (*d).age);
-	else
-		printf("Age: %s\n", a);
+	printf("Age: %f\n", (*d).age ? (*d).age : 0);
 	printf("Owner: %s\n", (*d).owner ? (*d).owner : a);
 }
