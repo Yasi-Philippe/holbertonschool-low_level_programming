@@ -12,10 +12,8 @@
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	dog_t ew_dog;
-	dog_t *ptr_dog = &ew_dog;
-	char *ptr;
-	int l1 = 0, l2 = 0, c, c2 = 0;
+	dog_t *ptr_dog;
+	int l1 = 0, l2 = 0, c;
 
 	if (!*name || !*owner)
 		return (0);
@@ -23,21 +21,28 @@ dog_t *new_dog(char *name, float age, char *owner)
 		l1++;
 	while (name[l2])
 		l2++;
-	ptr = malloc(sizeof(char) * (l1 + l2 + 2));
-	if (!ptr)
+	ptr_dog = malloc(sizeof(dog_t));
+	if (!ptr_dog)
 		return (0);
-	for (c = 0; name[c]; c++)
-		ptr[c] = name[c];
-	ptr[c] = '\0';
-	c++;
-	for (; owner[c2]; c++)
+	(*ptr_dog).name = malloc(l1);
+	if (!(*ptr_dog).name)
 	{
-		ptr[c] = owner[c2];
-		c2++;
+		free(ptr_dog);
+		return (0);
 	}
-	ptr[c] = owner[c2];
-	(*ptr_dog).name = ptr;
-	(*ptr_dog).owner = (ptr + l1 + 1);
+	(*ptr_dog).owner = malloc(l2);
+	if (!(*ptr_dog).owner)
+	{
+		free((*ptr_dog).name);
+		free(ptr_dog);
+		return (0);
+	}
+	for (c = 0; name[c]; c++)
+		(*ptr_dog).name[c] = name[c];
+	(*ptr_dog).name[c] = '\0';
+	for (c = 0; owner[c]; c++)
+		(*ptr_dog).owner[c] = owner[c];
+	(*ptr_dog).owner[c] = '\0';
 	(*ptr_dog).age = age;
 	return (ptr_dog);
 }
