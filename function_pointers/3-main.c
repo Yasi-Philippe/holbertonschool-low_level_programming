@@ -11,7 +11,7 @@
 int main(int argc, char *argv[])
 {
 	char i = *argv[2];
-	char j = *(argv[2] + 1);
+	char *j = (argv[2]);
 	int a;
 
 	if (argc != 4)
@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		exit(98);
 	}
-	if (i != '+' && i != '-' && i != '*' && i != '/' && i != '%' && j)
+	if ((i != '+' && i != '-' && i != '*' && i != '/' && i != '%') || j[1])
 	{
 		printf("Error\n");
 		exit(99);
