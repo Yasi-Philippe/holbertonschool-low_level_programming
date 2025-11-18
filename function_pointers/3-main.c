@@ -14,18 +14,17 @@ int main(int argc, char *argv[])
 	char j = *(argv[2] + 1);
 	int a;
 
-	if (argc != 3)
+	if (argc != 4)
 	{
-		for (a = 0; a <= (argc - 1); a++)
-			printf("%sError98\n", argv[a]);
+		printf("Error98\n");
 		exit(98);
 	}
-	if (i != '+' || i != '-' || i != '*' || i != '/' || i != '%' || j)
+	if (i != '+' && i != '-' && i != '*' && i != '/' && i != '%' && j)
 	{
 		printf("Error99\n");
 		exit(99);
 	}
-	if (!atoi(argv[2]))
+	if ((i == '/' || i == '%') && !atoi(argv[3]))
 	{
 		printf("Error100\n");
 		exit(100);
