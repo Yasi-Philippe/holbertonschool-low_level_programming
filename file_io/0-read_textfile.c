@@ -8,18 +8,31 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-    size_t file1;
-	ssize_t len;
-	char buffer[4096];
+	ssize_t fd, r, w;
+	char *buffer;
 
 	if (!filename)
 		return (0);
-	file1 = open(filename, O_RDONLY);
-	if (!file1)
+	fd = open(filename, O_RDONLY);
+	if (fd == -1)
 		return (0);
-	read(file1, buffer, sizeof(buffer));
-	len = write(file1, buffer, letters);
-	if (!len)
+	buffer = malloc (sizeof(char) * letters);
+	if (!buffer)
+	{
+		close(fd);
 		return (0);
-	return (len);
+	}
+	r = read(fd, buffer, letters);
+	if (r == -1)
+	{
+		free(buffer);
+		close(fd);
+		return (0);
+	}
+	w = write(fd, buffer, letters);
+	free(buffer);
+	close(fd);
+	if (w == -1 || w != r)
+		return (0);
+	return (w);
 }
