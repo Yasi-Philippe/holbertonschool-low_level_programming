@@ -25,5 +25,6 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	previous_add = actual_node->prev;
 	new_node = add_dnodeint(&actual_node, n);
 	new_node->prev = previous_add;
+	previous_add->next = new_node;
 	return (new_node);
 }
