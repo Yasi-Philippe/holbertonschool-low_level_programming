@@ -36,12 +36,12 @@ int main(int argc, char *argv[])
 	c2 = close(fd_to);
 	if (c1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s", c1);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", c1);
 		exit(100);
 	}
 	if (c2)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %s", c2);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", c2);
 		exit(100);
 	}
 	return (0);
